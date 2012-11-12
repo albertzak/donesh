@@ -1,11 +1,8 @@
 var net = require('net');
 var fs = require("fs");  
 
+var port = process.env.PORT || 8888;
 
-// currentAction
-var LOGIN = 0;
-var PROMPT = 1;
- 
 /*
  * Callback method executed when a new TCP socket is opened.
  */
@@ -108,7 +105,6 @@ var doItem = function(user, itemID, cb) {
 	}); else { 
 		cb("User not found.");
 	}
-
 }
 
 var showList = function(user, cb) {
@@ -130,4 +126,4 @@ var showList = function(user, cb) {
 	}
 }
 
-var server = net.createServer(newSocket).listen(8888);
+var server = net.createServer(newSocket).listen(port);
