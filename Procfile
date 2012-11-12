@@ -1,1 +1,1 @@
-worker: node dunsh.js
+worker: node donesh.js
