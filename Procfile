@@ -1,1 +1,1 @@
-web: node dunsh.js
+worker: node dunsh.js
