@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	font-family: 'Monaco', 'Courier', 'Courier New', fixed-width, sans;
+	font-size:22px;
+	background: #000;
+	color: #EDEFD3;
+}
+
+.logo {
+	color: #A1D94A;
+	font-size:100px;
+	margin:68px auto 68px auto;
+	width:480px;
+	height:160px;
+	background: url(donesh_logo.png) no-repeat;
+	text-indent:-9000px;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+    .logo {
+        background: url(donesh_logo@2x.png) no-repeat;
+        background-size: 480px 160px;
+
+        /* rest of your styles... */
+    }
+}
+
+.tagline {
+	margin-top:68px;
+}
+
+.big {
+	margin:100px 0 68px 0;
+}
+
+.note {
+	position: relative;
+	left: 400px;
+	top:28px;
+}
+
+.footer {
+	margin:100px 0 100px 0;
+	font-size:18px;
+	color: #434343;
+}
+
+span.link {
+	color: #A1D94A;
+	font-size: 48px;
+}
+
+span.link a:link, span.link a:visited, span.link a:hover, span.link a:active {
+	color: #A1D94A;
+}
+
+p a:link, p a:visited, p a:hover, p a:active {
+	color: #EDEFD3;
+}
+
+
+.lightgreen {
+	color: #EDEFD3;
+}
+
+.stronggreen {
+	color: #A1D94A;
+}
+
+.darkgrey {
+	color: #434343;
+}
+
+::-moz-selection {
+    background:rgba(161, 217, 74, 0.99);
+    color:#fff;
+}
+::-webkit-selection {
+    background:rgba(161, 217, 74, 0.99);
+    color:#fff;
+}
+::selection {
+    background:rgba(161, 217, 74, 0.99);
+    color:#fff;
+}
