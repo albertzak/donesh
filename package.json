@@ -1,7 +1,0 @@
-{ 
-  "name": "donesh"
-, "version": "0.0.1"
-, "dependencies": {
-    "net": "1.0.0"
-  }
-}
