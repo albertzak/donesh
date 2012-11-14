@@ -1,7 +1,7 @@
 var net = require('net');
-var fs = require("fs");  
+var fs = require('fs');
 
-var port = 23; // TELNET
+var port = 2323; // be sure to add an iptables redirect for traffic from port 23 to 2323 because listening on ports <1024 requires node to run as root. see http://stackoverflow.com/a/8321789
 
 var newSocket = function(socket) {
 	console.log("[INFO] New connection from " + socket.remoteAddress);
@@ -120,19 +120,21 @@ var doItem = function(user, itemID, cb) {
 
 var showList = function(user, cb) {
 	var file = "db/" + user + ".txt";
-	if (fs.existsSync(file)) fs.readFile(file, function(err, data) {
-    	if(err) cb(err);
-    	var listArray = data.toString().split("\n");
-    	var formattedList = "";
-    	for(i=1; i<listArray.length; i++) {
-        	formattedList += parseInt(i) + ". " + listArray[i-1] + "\n";
-    	}
-    	if ((i-1)==0) {
-    		cb("\nYour to-do list is empty.\n");
-    	} else {
-    		cb("\nThere are " + parseInt(i-1) + " items in your to-do list:\n" + formattedList);
-    	}
-	}); else { 
+	if (fs.existsSync(file)) {
+		fs.readFile(file, function(err, data) {
+	    	if(err) cb(err);
+	    	var listArray = data.toString().split("\n");
+	    	var formattedList = "";
+	    	for(i=1; i<listArray.length; i++) {
+	        	formattedList += parseInt(i) + ". " + listArray[i-1] + "\n";
+	    	}
+	    	if ((i-1)==0) {
+	    		cb("\nYour to-do list is empty.\n");
+	    	} else {
+	    		cb("\nThere are " + parseInt(i-1) + " items in your to-do list:\n" + formattedList);
+	    	}
+	    });
+	} else { 
 		cb("\nYour to-do list is empty.\n");
 	}
 }
